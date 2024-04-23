@@ -8,13 +8,14 @@ import time
 # -------------------------------------------------------------------設定Chrome Driver 的執行檔案路徑
 # Chrome 114版載點 : https://google-chrome.cn.uptodown.com/windows/download/104298869
 options = Options()
-options.executable_path = "D:\Selenium\chromedriver.exe"
+options.executable_path = "/Users/york8536/Desktop/python/chromedriver"
 options.add_argument("--auto-open-devtools-for-tabs")  # 開啟F12
 
 # -------------------------------------------------------------------建立Driver 物件實體，用程式操作 瀏覽器 運作
 driver = webdriver.Chrome(options=options)
 driver.maximize_window() # 視窗最大化
-
+# 設定隱式等待時間為10秒
+driver.implicitly_wait(10)
 # -------------------------------------------------------------------指定存取網址
 url="https://tsj.tw/"
 driver.get(url)
